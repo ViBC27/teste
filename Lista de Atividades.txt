@@ -1,0 +1,7 @@
+Iniciante:
+(1atv.c) - 2 números em ordem crescente
+(2atv.c) - 3 Numeros em Ordem Crescente
+(3atv.c) - 4 Numeros em Ordem Crescente
+(4atv.c) - Aumento de salário
+(5atv.c) - Acima da média
+
