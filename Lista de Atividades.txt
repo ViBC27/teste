@@ -4,4 +4,11 @@ Iniciante:
 (3atv.c) - 4 Numeros em Ordem Crescente
 (4atv.c) - Aumento de salário
 (5atv.c) - Acima da média
-
+(6atv.c) - Acidez de uma solução
+(7atv.c) - Alugando um veículo
+(8atv.c) - Aumento dos Trabalhadores
+(9atv.c) - Anos Bissextos
+(10atv.c) - Bônus de Viagem
+(11atv.c) - Crime
+(12atv.c) - Almoço na Cantina
+(13atv.c) - Aprovados no Concurso
