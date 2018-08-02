@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,7 +8,6 @@ void result(int matricula2[], char nome2[], double nota2[], int position, double
 	{
 		printf("Media = %.2lf\n", media);
 
-		return;
 	}
 
 	else
@@ -15,6 +15,7 @@ void result(int matricula2[], char nome2[], double nota2[], int position, double
 		printf("Matricula: %d Nome: %c Nota: %.1lf\n", matricula2[position], nome2[position], nota2[position]);
 
 		result(matricula2, nome2, nota2, position + 1, media, al_pass);
+
 	}
 }
 void verify_order(int matricula2[], char nome2[], double nota2[], int position, double media, int al_pass, int count)
@@ -77,10 +78,7 @@ void verify_order(int matricula2[], char nome2[], double nota2[], int position, 
 	{
 		verify_order(matricula2, nome2, nota2, 0, media, al_pass, count + 1);
 	}
-	else
-	{
-		result(matricula2, nome2, nota2, 0, media, al_pass);
-	}
+
 }
 
 void verify_pass(int matricula[], int matricula2[], char nome[], char nome2[], double nota[], double nota2[], int position, int position2, double media, int al_pass)
@@ -88,6 +86,8 @@ void verify_pass(int matricula[], int matricula2[], char nome[], char nome2[], d
 	if (position < 0)
 	{
 		verify_order(matricula2, nome2, nota2, 0, media, al_pass, 0);
+
+		result(matricula2, nome2, nota2, 0, media, al_pass);
 
 		return;
 	}
@@ -132,7 +132,6 @@ void verify_media(int q_alunos, int matricula[], char nome[], double nota[], int
 		}
 	}
 
-	return;
 }
 
 void verify_alunos(int q_alunos, int matricula[], char nome[], double nota[], int position, double total_nota)
@@ -150,7 +149,6 @@ void verify_alunos(int q_alunos, int matricula[], char nome[], double nota[], in
 	{
 		verify_media(q_alunos, matricula, nome, nota, position - 1, total_nota / q_alunos, 0);
 
-		return;
 	}
 }
 
