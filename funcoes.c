@@ -50,8 +50,12 @@ int primo(int n, int div, int count)
 
 void verify(int number, int num, int primo_atual)
 {
-	if (num > number)
+	if (num >= number)
 	{
+
+		printf("%d!/%d\n", num, primo_atual);
+
+
 		return;
 	}
 
@@ -59,19 +63,14 @@ void verify(int number, int num, int primo_atual)
 	{
 		int n_div = primo(num, 0, 1);
 
+
 		if (n_div == 2)
 		{
+
 			primo_atual = num;
 
-			if (num + 1 == number)
-			{
-				printf("%d!/%d", num, primo_atual);
-			}
+			printf("%d!/%d + ", num, primo_atual);
 
-			else
-			{
-				printf("%d!/%d + ", num, primo_atual);
-			}
 
 			verify(number, num + 1, primo_atual);
 		}
@@ -80,17 +79,11 @@ void verify(int number, int num, int primo_atual)
 		{
 			int aux_primo = primo_p(primo_atual + 1, 0, 1);
 
-			if (num + 1 == number)
-			{
-				printf("%d!/%d", num, aux_primo);
-			}
 
-			else
-			{
-				printf("%d!/%d + ", num, aux_primo);
-			}
+			printf("%d!/%d + ", num, aux_primo);
 
-			verify(number, num + 1, primo_atual);
+
+			verify(number, num + 1, aux_primo);
 		}
 	}
 }
