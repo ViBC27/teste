@@ -1,0 +1,95 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+struct shirts
+{
+
+  char student[100];
+  char color[10];
+  char size;
+  
+};
+
+int main() {
+
+  int tPeople, i, j;
+  scanf("%d\n", &tPeople);
+  struct shirts people[tPeople];
+  struct shirts aux;
+
+  for(i = 0; i < tPeople; i++)
+  {
+
+    fgets(people[i].student, 100, stdin);
+    fgets(people[i].color, 10, stdin);
+    scanf(" %c", &people[i].size);
+
+  }
+
+  for(i = 0; i < tPeople - 1; i++)
+  {
+
+    for(j = 0; j < tPeople - 1; j++)
+    {
+
+      if(strcasecmp(people[j].color, "Vermelho") == 0 && strcasecmp(people[j + 1].color, "Branco") == 0)
+      {
+
+        aux = people[j];
+        people[j] = people[j + 1];
+        people[j + 1] = aux;
+
+      }
+
+    }
+  }
+
+  for(i = 0; i < tPeople - 1; i++)
+  {
+
+    for(j = 0; j < tPeople - 1; j++)
+    {
+
+      if(strcasecmp(people[j].color, people[j + 1].color) == 0 && (people[j].size == 'M' || people[j].size == 'G') && people[j + 1].size == 'P')
+      {
+
+        aux = people[j];
+        people[j] = people[j + 1];
+        people[j + 1] = aux;
+
+      }
+
+    }
+  }
+
+  for(i = 0; i < tPeople - 1; i++)
+  {
+
+    for(j = 0; j < tPeople - 1; j++)
+    {
+
+      if(strcasecmp(people[j].color, people[j + 1].color) == 0 && strcasecmp(people[j].size, people[j + 1].size) == 0 && strcasecmp(people[j].student, people[j + 1].student) > 0)
+      {
+
+        aux = people[j];
+        people[j] = people[j + 1];
+        people[j + 1] = aux;
+
+      }
+
+    }
+  }
+
+  for(i = 0; i < tPeople; i++)
+  {
+
+    printf("%s ", people[i].color);
+    printf("%c ", people[i].size);
+    printf("%s\n", people[i].student);
+
+  }
+
+  return 0;
+}
